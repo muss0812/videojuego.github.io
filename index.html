@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Video Juegos</title>
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById("canvas1");
+            if (canvas && canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+                if (ctx) {
+                    //Creacion en tono degrade//
+                    var gradiente = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                    gradiente.addColorStop(0, "#6D2DF7");
+                    gradiente.addColorStop(0.6, "#BBA3FF");
+                    gradiente.addColorStop(0.8, "#E6BED2");
+                    gradiente.addColorStop(0.2, "#A2E0EB");
+                    gradiente.addColorStop(1, "#6D2DF7");
+                    ctx.fillStyle = gradiente;
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    //Imagen
+                    var imagen = new Image();
+                    function procesaImagen() {
+                        ctx.drawImage(imagen, 260, 60, 200, 200);
+                    }
+                    imagen.src = "./imagenes/perfil.jpg";
+                    imagen.onload = function (e) {
+                        procesaImagen();
+                    }
+
+                    ctx.lineWidth = 10;
+                    ctx.strokeStyle = "black";
+                    ctx.fillStyle = "green";
+                    //ctx.lineCap = "round";
+
+                    //Letra A
+
+                    ctx.moveTo(15, 175);
+                    ctx.lineTo(30, 122);
+                    ctx.lineTo(40, 122);
+                    ctx.lineTo(55, 175);
+                    ctx.stroke();
+
+                    ctx.moveTo(50, 150);
+                    ctx.lineTo(25, 150);
+                    ctx.stroke();
+
+                    //Letra L
+                    ctx.beginPath();
+                    ctx.moveTo(70, 118);
+                    ctx.lineTo(70, 170);
+                    ctx.lineTo(100, 170);
+                    ctx.stroke();
+
+
+                    //Letra E
+
+                    ctx.beginPath();
+                    ctx.moveTo(115, 145);
+                    ctx.lineTo(115, 170);
+                    ctx.lineTo(145, 170);
+                    ctx.lineTo(115, 170);
+                    ctx.lineTo(115, 145);
+                    ctx.lineTo(140, 145);
+                    ctx.lineTo(115, 145);
+                    ctx.lineTo(115, 120);
+                    ctx.lineTo(145, 120);
+                    ctx.stroke();
+
+
+                    //Letra J
+                    ctx.beginPath();
+                    ctx.moveTo(180, 115);
+                    ctx.lineTo(180, 160);
+                    ctx.lineTo(180, 169);
+                    ctx.lineTo(160, 169);
+                    ctx.lineTo(160, 150);
+                    ctx.stroke();
+
+                    //Letra A
+
+                    ctx.moveTo(200, 175);
+                    ctx.lineTo(210, 122);
+                    ctx.lineTo(220, 122);
+                    ctx.lineTo(235, 175);
+                    ctx.stroke();
+
+                    ctx.moveTo(230, 150);
+                    ctx.lineTo(200, 150);
+                    ctx.stroke();
+
+                }
+
+            } else {
+                alert("Error al crear el contexto");
+            }
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <ol>
+        <ol>
+            <ol>
+                <ol>
+                    <h1 style="color:#E681DD">Video Juegos</h1>
+                </ol>
+            </ol>
+        </ol>
+    </ol>
+    <canvas id="canvas1" width="500px" height="300px">
+        Tu navegador no soporta el CANVAS
+    </canvas>
+    <h3>
+        <ol>
+            <ol>
+                <ol><a href="juego.html" style="color:#D780E6" class="boton" target="_blank">Quieres Divertirte ....
+                        Click Aquí</a></ol>
+            </ol>
+        </ol>
+    </h3>
+
+</body>
+
+</html>
